@@ -1,9 +1,9 @@
 //this is the function to generate the password
-function generatePassword(){
+function generatePassword(randomPassword){
 
     //The variables needed to generate the random charactors
     var userPassword = ''
-    var userPasswordChoices = 0;
+    var passwordChoiceCounter = 0;
     var lowerCaseLetter = 'abcdefghijklmnopqrstuvwxyz';
     var upperCaseLetter = lowerCaseLetter.toUpperCase();
     var passwordNumber = '0123456789';
@@ -19,31 +19,37 @@ function generatePassword(){
         }
     }
     // The option for the user to choose if they would want lower case letters 
-    while (userPasswordChoices == 0){
+    while (passwordChoiceCounter == 0){
     var lowerCase = confirm("Do you want lower case letters in your password?");
     if(lowerCase == true){
         userPassword = userPassword + lowerCaseLetter;
-        userPasswordChoices++;
+        //passwordChoiceCounter++ is making it so if the user is to choose just one it will still be greater than 0
+        userPasswordChoicecounter++;
         
     }
     var upperCase = confirm("Do you want upper case letters in your password?");
     if(upperCase == true){
         userPassword = userPassword + upperCaseLetter;
-        userPasswordChoices++;
+        passwordChoiceCounter++;
         
     }
     var numbers = confirm("Do you want numbers in your password?");
     if(numbers == true){
         userPassword = userPassword + passwordNumber;
-        userPasswordChoices++;
+        passwordChoiceCounter++;
         
     }
     var special = confirm("Do you want special characters letters in your password?");
     if(special == true){
         userPassword = userPassword + passwordSpecial;
-        userPasswordChoices++;
-    }else{ alert("Please pick at least two")}
+        passwordChoiceCounter++;
+    }
+    if(passwordChoiceCounter ==0) alert("Please pick at least one option.");
     console.log(userPassword);
+    for(var i = 0; i < passwordLength; i++ ){
+        UserPass += charPool.charAt(Math.floor(Math.random() * charPool.length))
+
+    }
 }
 
 }
