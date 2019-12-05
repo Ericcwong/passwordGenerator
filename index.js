@@ -12,7 +12,7 @@
    
 //When generatePassword is clicked it would have to run through the variables to check if the checked boxes are checked or not.
     generatePassword.addEventListener("click", function(){
-        
+        var userPassword = "";
         var passwordLength = document.getElementById("inputPassLength").value;//Where the user inputs in the desired length
         var lowerCheckBox = document.getElementById("lowerCaseCheck").checked;
         var upperCheckBox = document.getElementById("upperCaseCheck").checked;
