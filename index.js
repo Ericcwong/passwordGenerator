@@ -16,24 +16,27 @@
     generatePassword.addEventListener("click", function(){
         var userPassword = "";
         var passwordChoices = "";
+
 //This pulls in the ids from the dom
         var passwordLength = document.getElementById("inputPassLength").value;//Where the user inputs in the desired length
         var lowerCheckBox = document.getElementById("lowerCaseCheck").checked;
         var upperCheckBox = document.getElementById("upperCaseCheck").checked;
         var numberCheckBox= document.getElementById("numberCheck").checked;
         var specialCheckBox = document.getElementById("specialCheck").checked;
+        console.log(lowerCheckBox,upperCheckBox,numberCheckBox,specialCheckBox);
+
  //This stop the code when the user chooses a length outside of 8 to 128       
             if(passwordLength < 8 || passwordLength > 128){
                 alert("Please choose a length of 8 to 128.");
-                return generatePassword
+                return generatePassword;
             }
 //This will stop the code from running if the user has selected nothing for the password
-            if( lowerCheckBox === false, 
-                upperCheckBox === false,
-                numberCheckBox === false,
-                specialCheckBox === false
-                    ){alert("Please choose at least one selector.")
-                    return generatePassword}
+            if (lowerCheckBox === false &&
+                upperCheckBox === false &&
+                numberCheckBox === false &&
+                specialCheckBox === false)
+                {alert("Please choose at least one selector.");
+                return generatePassword;}
 //Checks if the checkboxes are true
             if (lowerCheckBox === true){
                 passwordChoices = passwordChoices + lowerCaseLetter;
@@ -50,7 +53,7 @@
 
             for(i=0; i<passwordLength; i++){
                 userPassword += passwordChoices.charAt(Math.floor(Math.random() * passwordChoices.length));
-            }
+            };
             
 
             console.log(lowerCheckBox,upperCheckBox,numberCheckBox,specialCheckBox);
